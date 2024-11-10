@@ -42,7 +42,7 @@ This project demonstrates the power and versatility of the Internet of Things (I
 ---
 
 ## Circuit Diagram
-![Circuit Diagram](https://via.placeholder.com/600)  
+![Circuit Diagram](https://github.com/Aishwaryan172/LED-Using-Blynk-and-ESP8266/blob/main/Circuit%20Diagram(LED)..png)
 *Fig 1: Circuit diagram for LED control using ESP8266*
 
 ---
