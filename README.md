@@ -54,6 +54,8 @@ This project demonstrates the power and versatility of the Internet of Things (I
 ### Steps
 1. **Hardware Setup**:
    - Connect the LED to the NodeMCU as per the circuit diagram.
+   - LED Positive (Anode) → D4 (GPIO2) on NodeMCU
+   - LED Negative (Cathode) → GND on NodeMCU
    - Use a suitable resistor with the LED to prevent damage.
    
 2. **Blynk Configuration**:
