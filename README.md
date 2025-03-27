@@ -28,7 +28,6 @@ This project demonstrates the power and versatility of the Internet of Things (I
 - **LED**: The indicator controlled remotely.
 - **Jumper Wires**: Connect the components on the breadboard.
 - **Breadboard**: For prototyping the circuit.
-- **Resistor (220Ω - 330Ω)**: Prevents excessive current through the LED.
 - **USB Cable**: Used to connect the NodeMCU to the computer for programming.
 - **Power Supply**: 5V USB adapter or power bank (optional).
 
@@ -59,7 +58,6 @@ This project demonstrates the power and versatility of the Internet of Things (I
 1. **Connect the LED to NodeMCU**:
    - LED **Positive (Anode)** → **D4 (GPIO2)** on NodeMCU
    - LED **Negative (Cathode)** → **GND** on NodeMCU
-   - **Resistor (220Ω - 330Ω)** in series with the LED anode.
 2. **Connect NodeMCU to Power**:
    - Use a **USB cable** to connect NodeMCU to a computer for programming.
    - After programming, use a **5V USB adapter or power bank** to power it independently.
