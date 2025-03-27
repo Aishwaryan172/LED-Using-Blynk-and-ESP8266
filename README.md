@@ -60,18 +60,112 @@ This project demonstrates the power and versatility of the Internet of Things (I
    - Use a suitable resistor with the LED to prevent damage.
    
 2. **Blynk Configuration**:
-   - first go to the blyn.cloud website and register to website and login
-   - go to the templete page click on new template button and enter any name also select your device name (ESP8266)
-   - select connection type it is WI-FI and click done
-   - then go to datastreams and select digital give name select pin as 2 then click create
-   - then go to web dashboard drag and drop the switch widget then go to settings select datastream and click save and again click save
-   - then go to the search page select add a new device and select from template and entire template name then click criate
-   - now we will get template id and authotication taken copy that one and paste in our program
-   - then go to tools select board as node mcu and select port click arrow button run the program
-   - then go to wesit now the device shows is online
-   - Create a new project in the Blynk app.
-   - Add a button widget and link it to **Virtual Pins V0** and **V1**.
-   - Obtain the **Auth Token** for the project.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blynk LED Control with NodeMCU</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        code { background: #f4f4f4; padding: 5px; display: block; }
+        pre { background: #f4f4f4; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Blynk LED Control with NodeMCU (ESP8266)</h1>
+    <p>Follow these steps to control an LED using Blynk and a NodeMCU (ESP8266).</p>
+
+    <h2>🌐 Step 1: Setup Blynk.Cloud</h2>
+    <ol>
+        <li>Go to <a href="https://blynk.cloud" target="_blank">Blynk Cloud</a> and register.</li>
+        <li>Login and create a new template.</li>
+        <li>Enter a template name (e.g., "Control LED").</li>
+        <li>Select your device: <strong>ESP8266</strong>.</li>
+        <li>Choose connection type: <strong>Wi-Fi</strong> and click <strong>Done</strong>.</li>
+        <li>Go to <strong>Datastreams</strong> and select <strong>Digital</strong>.</li>
+        <li>Enter a name, select pin as <strong>2 (D4)</strong>, and click <strong>Create</strong>.</li>
+        <li>Go to <strong>Web Dashboard</strong>, add a <strong>Switch Widget</strong>, and link it to the datastream.</li>
+        <li>Click <strong>Save</strong> and then <strong>Save</strong> again.</li>
+        <li>Go to <strong>Search Page → Add a New Device → From Template</strong>.</li>
+        <li>Enter the template name and click <strong>Create</strong>.</li>
+        <li>Copy the <strong>Template ID</strong> and <strong>Auth Token</strong>.</li>
+    </ol>
+
+    <h2>📱 Step 2: Install & Configure Blynk Mobile App</h2>
+    <ol>
+        <li>Download and install the <strong>Blynk App</strong> from the Play Store/App Store.</li>
+        <li>Login using the same credentials as Blynk Cloud.</li>
+        <li>Select your <strong>"Control LED"</strong> template.</li>
+        <li>Click on <strong>Setup Dashboard</strong> → Add <strong>Button Widget</strong>.</li>
+        <li>Enter a name for the button, link it to the datastream, and set mode to <strong>Switch</strong>.</li>
+    </ol>
+
+    <h2>💻 Step 3: Upload Code to NodeMCU (ESP8266)</h2>
+    <h3>1️⃣ Install Required Libraries</h3>
+    <ul>
+        <li>Open <strong>Arduino IDE</strong>.</li>
+        <li>Go to <strong>Sketch → Include Library → Manage Libraries</strong>.</li>
+        <li>Search for and install:
+            <ul>
+                <li><strong>Blynk</strong> by Volodymyr Shymanskyy</li>
+                <li><strong>ESP8266WiFi</strong></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2️⃣ Upload This Code to ESP8266</h3>
+    <pre><code>
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+#define relay1 D0
+#define relay2 D1
+
+char auth[] = "Your_Blynk_Auth_Token"; // Replace with your Auth Token
+char ssid[] = "Your_SSID";             // Replace with your Wi-Fi name
+char pass[] = "Your_Password";         // Replace with your Wi-Fi password
+
+BLYNK_WRITE(V0) {
+  bool value1 = param.asInt();
+  digitalWrite(relay1, value1 ? LOW : HIGH);
+}
+
+BLYNK_WRITE(V1) {
+  bool value2 = param.asInt();
+  digitalWrite(relay2, value2 ? LOW : HIGH);
+}
+
+void setup() {
+  pinMode(relay1, OUTPUT);
+  pinMode(relay2, OUTPUT);
+  digitalWrite(relay1, HIGH);
+  digitalWrite(relay2, HIGH);
+  Blynk.begin(auth, ssid, pass);
+}
+
+void loop() {
+  Blynk.run();
+}
+    </code></pre>
+
+    <h2>🚀 Step 4: Upload & Test</h2>
+    <ol>
+        <li>Open <strong>Arduino IDE</strong>.</li>
+        <li>Go to <strong>Tools → Board</strong> → Select <strong>NodeMCU 1.0 (ESP-12E Module)</strong>.</li>
+        <li>Select the correct <strong>Port</strong> (e.g., COM3, COM4, etc.).</li>
+        <li>Click the <strong>Upload</strong> button.</li>
+        <li>Open <strong>Serial Monitor</strong> (115200 Baud Rate) to check for "Device is Online" message.</li>
+        <li>Go to <strong>Blynk Cloud</strong> to confirm the device is online.</li>
+        <li>Use the <strong>Blynk App</strong> to control the LED.</li>
+    </ol>
+
+    <h2>🎉 Success!</h2>
+    <p>Now you can turn your LED ON/OFF remotely using Blynk!</p>
+</body>
+</html>
+
 
 4. **Code**:
    - Open Arduino IDE.
