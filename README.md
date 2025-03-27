@@ -28,6 +28,7 @@ This project demonstrates the power and versatility of the Internet of Things (I
 - **LED**: The indicator controlled remotely.
 - **Jumper Wires**: Connect the components on the breadboard.
 - **Breadboard**: For prototyping the circuit.
+- **Connecting cable**: Connecting cables are used to supply VCC (power) and GND (ground).
 
 ---
 
