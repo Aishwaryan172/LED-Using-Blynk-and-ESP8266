@@ -34,17 +34,6 @@ This project demonstrates the power and versatility of the Internet of Things (I
 
 ---
 
-## Hardware Connection
-1. **Connect the LED to NodeMCU**:
-   - LED **Positive (Anode)** → **D4 (GPIO2)** on NodeMCU
-   - LED **Negative (Cathode)** → **GND** on NodeMCU
-   - **Resistor (220Ω - 330Ω)** in series with the LED anode.
-2. **Connect NodeMCU to Power**:
-   - Use a **USB cable** to connect NodeMCU to a computer for programming.
-   - After programming, use a **5V USB adapter or power bank** to power it independently.
-
----
-
 ## Software Components
 1. **Arduino IDE**: For writing and uploading code to the ESP8266.
 2. **ESP8266 Library**: To enable programming the NodeMCU in Arduino IDE.
@@ -63,6 +52,19 @@ This project demonstrates the power and versatility of the Internet of Things (I
 - Install [Arduino IDE](https://www.arduino.cc/en/software).
 - Download and install the **ESP8266** library in Arduino IDE.
 - Install the Blynk app on your smartphone (available on [Android](https://play.google.com) and [iOS](https://apps.apple.com)).
+  
+---
+
+## Hardware Connection
+1. **Connect the LED to NodeMCU**:
+   - LED **Positive (Anode)** → **D4 (GPIO2)** on NodeMCU
+   - LED **Negative (Cathode)** → **GND** on NodeMCU
+   - **Resistor (220Ω - 330Ω)** in series with the LED anode.
+2. **Connect NodeMCU to Power**:
+   - Use a **USB cable** to connect NodeMCU to a computer for programming.
+   - After programming, use a **5V USB adapter or power bank** to power it independently.
+
+---
 
 ### Step 1: Setup Blynk Cloud
 1. Go to [Blynk Cloud](https://blynk.cloud) and register.
