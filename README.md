@@ -56,14 +56,24 @@ This project demonstrates the power and versatility of the Internet of Things (I
    - Connect the LED to the NodeMCU as per the circuit diagram.
    - LED Positive (Anode) → D4 (GPIO2) on NodeMCU
    - LED Negative (Cathode) → GND on NodeMCU
+   - connecting cable is connected to cpu and node mcu
    - Use a suitable resistor with the LED to prevent damage.
    
 2. **Blynk Configuration**:
+   - first go to the blyn.cloud website and register to website and login
+   - go to the templete page click on new template button and enter any name also select your device name (ESP8266)
+   - select connection type it is WI-FI and click done
+   - then go to datastreams and select digital give name select pin as 2 then click create
+   - then go to web dashboard drag and drop the switch widget then go to settings select datastream and click save and again click save
+   - then go to the search page select add a new device and select from template and entire template name then click criate
+   - now we will get template id and authotication taken copy that one and paste in our program
+   - then go to tools select board as node mcu and select port click arrow button run the program
+   - then go to wesit now the device shows is online
    - Create a new project in the Blynk app.
    - Add a button widget and link it to **Virtual Pins V0** and **V1**.
    - Obtain the **Auth Token** for the project.
 
-3. **Code**:
+4. **Code**:
    - Open Arduino IDE.
    - Include the necessary libraries: `ESP8266WiFi.h` and `BlynkSimpleEsp8266.h`.
    - Replace the placeholder values in the code:
@@ -72,7 +82,7 @@ This project demonstrates the power and versatility of the Internet of Things (I
      - `auth`: Your Blynk Auth Token.
    - Upload the code to your NodeMCU.
 
-4. **Run the Project**:
+5. **Run the Project**:
    - Power the NodeMCU and connect it to Wi-Fi.
    - Open the Blynk app, and control the LED using the configured buttons.
 
