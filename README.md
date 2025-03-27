@@ -111,19 +111,28 @@ Here’s the sample code used in this project:
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
-#define LED_PIN D4
+#define relay1 D0
+#define relay2 D1
 
 char auth[] = "Your_Blynk_Auth_Token"; // Replace with your Auth Token
 char ssid[] = "Your_SSID";             // Replace with your Wi-Fi name
 char pass[] = "Your_Password";         // Replace with your Wi-Fi password
 
 BLYNK_WRITE(V0) {
-  int value = param.asInt();
-  digitalWrite(LED_PIN, value);
+  bool value1 = param.asInt();
+  digitalWrite(relay1, value1 ? LOW : HIGH);
+}
+
+BLYNK_WRITE(V1) {
+  bool value2 = param.asInt();
+  digitalWrite(relay2, value2 ? LOW : HIGH);
 }
 
 void setup() {
-  pinMode(LED_PIN, OUTPUT);
+  pinMode(relay1, OUTPUT);
+  pinMode(relay2, OUTPUT);
+  digitalWrite(relay1, HIGH);
+  digitalWrite(relay2, HIGH);
   Blynk.begin(auth, ssid, pass);
 }
 
