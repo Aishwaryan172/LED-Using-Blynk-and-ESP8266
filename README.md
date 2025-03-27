@@ -128,7 +128,8 @@ This project demonstrates the power and versatility of the Internet of Things (I
    void loop() {
      Blynk.run();
    }
-
+    ```cpp
+   
    ## 🚀 Step 4: Upload & Test
    1. Open **Arduino IDE**.
    2. Go to **Tools → Board** → Select **NodeMCU 1.0 (ESP-12E Module)**.
